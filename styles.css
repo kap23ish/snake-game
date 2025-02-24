@@ -1,0 +1,208 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #4CAF50, #00BCD4);
+    font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+}
+
+.game-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+}
+
+.game-container.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    color: #444;
+}
+
+#gameCanvas {
+    background: linear-gradient(45deg, #87CEEB, #FFEB3B);
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.controls {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.control-text {
+    color: #666;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+#startBtn, .try-again-btn {
+    background: #4CAF50;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: white;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    animation: fadeIn 0.5s ease-in;
+}
+
+#startBtn:hover, .try-again-btn:hover {
+    background: #45a049;
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.game-over-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.game-over-text {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.try-again-btn {
+    background: #4CAF50;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.try-again-btn:hover {
+    background: #45a049;
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translate(-50%, -60%); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translate(-50%, -50%); 
+    }
+}
+
+.intro-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fade-in 0.5s ease-in;
+}
+
+.intro-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 20px;
+    animation: bounce 1s ease infinite;
+}
+
+.intro-start-btn {
+    background: #4CAF50;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    color: white;
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    margin-top: 20px;
+    animation: pulse 1.5s ease infinite;
+}
+
+.intro-start-btn:hover {
+    background: #45a049;
+    transform: scale(1.05);
+}
+
+#introCanvas {
+    background: linear-gradient(45deg, #87CEEB, #FFEB3B);
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: translate(-50%, -60%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+@keyframes fade-out {
+    from { opacity: 1; transform: translate(-50%, -50%); }
+    to { opacity: 0; transform: translate(-50%, -40%); }
+}
+
+.fade-out {
+    animation: fade-out 0.5s ease-in forwards;
+}
+
+.fade-in {
+    animation: fade-in 0.5s ease-in;
+}
+
+.snake-emoji {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    animation: wiggle 2s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(-10deg); }
+    50% { transform: rotate(10deg); }
+} 
